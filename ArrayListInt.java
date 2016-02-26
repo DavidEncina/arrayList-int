@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  * Write a description of class ArrayListInt here.
@@ -7,27 +8,28 @@
  */
 public class ArrayListInt
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // Lista que almacena los numeros
+    private int[] numeros;
 
     /**
      * Constructor for objects of class ArrayListInt
      */
     public ArrayListInt()
     {
-        // initialise instance variables
-        x = 0;
+        // Inicializa el array
+        numeros = new int[0];
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Añade un elemento a la colección al final de la misma.
      */
-    public int sampleMethod(int y)
+    public void add(int elemento)
     {
-        // put your code here
-        return x + y;
+        int[] nuevoArray = new int[numeros.length + 1];
+        for (int i = 0; i < numeros.length; i++) {            
+            nuevoArray[i] = numeros[i];
+        }
+        nuevoArray[numeros.length] = elemento;
+        numeros = nuevoArray;
     }
 }
